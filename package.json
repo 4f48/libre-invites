@@ -14,10 +14,15 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.3",
-    "astro": "^5.12.9"
+    "@astrojs/svelte": "^7.1.0",
+    "astro": "^5.12.9",
+    "svelte": "^5.38.1",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@types/node": "^24.2.1",
+    "@unocss/reset": "^66.4.2",
+    "unocss": "^66.4.2",
     "wrangler": "^4.28.1"
   },
   "pnpm": {
