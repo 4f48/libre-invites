@@ -1,16 +1,14 @@
 ---
-
+import Layout from "@/layouts/html.astro";
+import { Button } from "@/components";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+    <section class="h-screen flex flex-col gap-5 items-center justify-center">
+        <h1 class="text-4xl font-bold">Libre Invites</h1>
+        <div class="flex gap-3">
+            <Button href="/new/event">Create event</Button>
+            <Button href="/new/arrangement">Create arrangement</Button>
+        </div>
+    </section>
+</Layout>
