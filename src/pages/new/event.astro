@@ -1,7 +1,12 @@
 ---
 import Layout from "@/layouts/html.astro";
+import { Input, Title } from "@/components";
 ---
 
 <Layout>
-    <h1>Create event</h1>
+    <Title>Create event</Title>
+    <form class="flex flex-col gap-2">
+        <Input value="New Event" name="Title" />
+        <Input name="Location or Video Call" />
+    </form>
 </Layout>

@@ -19,7 +19,6 @@
 
     type Props = {
         children: Snippet;
-        class?: string;
     } & Button.RootProps &
         VariantProps<typeof button>;
     const { children, class: className, variant, ...props }: Props = $props();
