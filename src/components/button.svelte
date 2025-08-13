@@ -11,11 +11,13 @@
                 variant: {
                     primary: "bg-white hover:bg-white/90 text-neutral-900",
                     secondary:
-                        "bg-neutral-600/75 hover:bg-neutral-600 text-white rounded-full",
+                        "bg-neutral-600/75 hover:bg-neutral-600 text-white",
+                    ghost: "hover:bg-neutral-600/50 text-white",
                 },
                 size: {
                     action: "rounded-md py-1 px-2",
                     modal: "rounded-full py-2 px-4",
+                    icon: "size-6 rounded-md",
                 },
             },
             defaultVariants: {

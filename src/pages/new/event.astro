@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/html.astro";
-import { Button, Input, Title } from "@/components";
+import { Button, DatePicker, Input, Title } from "@/components";
 ---
 
 <Layout class="flex items-center justify-center h-screen">
@@ -9,6 +9,7 @@ import { Button, Input, Title } from "@/components";
         <form class="grid gap-2" enctype="multipart/form-data">
             <Input id="title" value="New Event" name="Title" />
             <Input id="location" name="Location or Video Call" />
+            <DatePicker client:idle name="Starts" />
             <Input id="url" name="URL" />
             <Input id="notes" name="Notes" />
             <div class="grid gap-1 grid-cols-2">

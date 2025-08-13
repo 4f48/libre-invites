@@ -14,6 +14,9 @@ importers:
       '@astrojs/svelte':
         specifier: ^7.1.0
         version: 7.1.0(@types/node@24.2.1)(astro@5.12.9(@types/node@24.2.1)(jiti@2.5.1)(rollup@4.46.2)(typescript@5.9.2))(jiti@2.5.1)(svelte@5.38.1)(typescript@5.9.2)
+      '@internationalized/date':
+        specifier: ^3.8.2
+        version: 3.8.2
       astro:
         specifier: ^5.12.9
         version: 5.12.9(@types/node@24.2.1)(jiti@2.5.1)(rollup@4.46.2)(typescript@5.9.2)
@@ -24,6 +27,9 @@ importers:
         specifier: ^5.9.2
         version: 5.9.2
     devDependencies:
+      '@iconify-json/ph':
+        specifier: ^1.2.2
+        version: 1.2.2
       '@types/node':
         specifier: ^24.2.1
         version: 24.2.1
@@ -501,6 +507,9 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@iconify-json/ph@1.2.2':
+    resolution: {integrity: sha512-PgkEZNtqa8hBGjHXQa4pMwZa93hmfu8FUSjs/nv4oUU6yLsgv+gh9nu28Kqi8Fz9CCVu4hj1MZs9/60J57IzFw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2568,6 +2577,10 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@iconify-json/ph@1.2.2':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify/types@2.0.0': {}
 
