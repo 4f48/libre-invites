@@ -4,8 +4,7 @@
     import { tick } from "svelte";
     import Button from "./button.svelte";
 
-    interface Props extends DatePicker.InputProps {}
-    const { name }: Props = $props();
+    const { name, ...props }: DatePicker.InputProps = $props();
 
     let open = $state(false);
     let triggerEl: HTMLDivElement | null = null;
@@ -29,10 +28,12 @@
             >{name}</DatePicker.Label
         >
         <DatePicker.Trigger>
-            {#snippet child({ props })}
-                <div bind:this={triggerEl} {...props}>
+            {#snippet child({ props: triggerProps })}
+                <div bind:this={triggerEl} {...triggerProps}>
                     <DatePicker.Input
-                        class="border border-neutral-600 py-1 px-2 rounded-md"
+                        class="border border-neutral-600 hover:bg-neutral-800 focus-visible:bg-neutral-800 py-1 px-2 rounded-md"
+                        {name}
+                        {...props}
                     >
                         {#snippet children({ segments })}
                             {#each segments as { part, value }, i (`segment-${i}`)}
