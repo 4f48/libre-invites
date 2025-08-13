@@ -5,11 +5,10 @@
     import type { HTMLAttributes } from "svelte/elements";
 
     interface Props extends HTMLAttributes<HTMLInputElement> {
+        id: string;
         name: string;
     }
-    const { class: className, name, ...props }: Props = $props();
-
-    const id = name.toLowerCase();
+    const { class: className, id, name, ...props }: Props = $props();
 </script>
 
 <Label.Root for={id} class="sr-only">{name}</Label.Root>

@@ -1,11 +1,12 @@
 ---
 import { cn } from "@/lib";
+import type { HTMLAttributes } from "astro/types";
 import { Font } from "astro:assets";
 
-interface Props {
+interface Props extends HTMLAttributes<"body"> {
     padding?: boolean;
 }
-const { padding = true } = Astro.props;
+const { class: className, padding = true, ...props } = Astro.props;
 ---
 
 <html lang="en">
@@ -18,7 +19,10 @@ const { padding = true } = Astro.props;
 
         <Font cssVariable="--font-roboto" preload />
     </head>
-    <body class={cn("bg-neutral-900 text-white", padding && "p-3")}>
+    <body
+        class={cn("bg-neutral-900 text-white", padding && "p-3", className)}
+        {...props}
+    >
         <slot />
     </body>
 </html>

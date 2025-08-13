@@ -1,12 +1,22 @@
 ---
 import Layout from "@/layouts/html.astro";
-import { Input, Title } from "@/components";
+import { Button, Input, Title } from "@/components";
 ---
 
-<Layout>
-    <Title>Create event</Title>
-    <form class="flex flex-col gap-2">
-        <Input value="New Event" name="Title" />
-        <Input name="Location or Video Call" />
-    </form>
+<Layout class="flex items-center justify-center h-screen">
+    <main class="w-md grid gap-3">
+        <Title>Create event</Title>
+        <form class="grid gap-2" enctype="multipart/form-data">
+            <Input id="title" value="New Event" name="Title" />
+            <Input id="location" name="Location or Video Call" />
+            <Input id="url" name="URL" />
+            <Input id="notes" name="Notes" />
+            <div class="grid gap-1 grid-cols-2">
+                <Button href="/" type="button" variant="secondary"
+                    >Cancel</Button
+                >
+                <Button type="submit">Create</Button>
+            </div>
+        </form>
+    </main>
 </Layout>
