@@ -15,6 +15,14 @@
  * along with Libre Invites. If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { writable } from "svelte/store";
+import { sqliteTable, text, int } from "drizzle-orm/sqlite-core";
 
-export const eventAllDay = writable(true);
+export const event = sqliteTable("event", {
+  id: int("id").primaryKey({ autoIncrement: true }),
+  title: text("title").notNull(),
+  location: text("location"),
+  start: int("start", { mode: "timestamp" }).notNull(),
+  end: int("end", { mode: "timestamp" }).notNull(),
+  url: text("url"),
+  notes: text("notes"),
+});

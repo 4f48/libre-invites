@@ -17,6 +17,7 @@
       "binding": "DB",
       "database_name": "libre-invites",
       "database_id": "fe519cb5-0184-4853-8e91-14539b27f4aa",
+      "experimental_remote": true,
     },
   ],
   "kv_namespaces": [

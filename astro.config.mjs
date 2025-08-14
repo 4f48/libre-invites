@@ -9,6 +9,9 @@ export default defineConfig({
   adapter: cloudflare({
     platformProxy: {
       enabled: true,
+      experimental: {
+        remoteBindings: true,
+      },
     },
     imageService: "cloudflare",
   }),
