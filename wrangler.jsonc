@@ -12,6 +12,13 @@
     "binding": "ASSETS",
     "directory": "./dist",
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "libre-invites",
+      "database_id": "fe519cb5-0184-4853-8e91-14539b27f4aa",
+    },
+  ],
   "kv_namespaces": [
     {
       "binding": "SESSION",

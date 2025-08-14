@@ -36,7 +36,7 @@
         className,
     )}
     {id}
-    {name}
+    name={id}
     placeholder={name}
     {...props}
 />

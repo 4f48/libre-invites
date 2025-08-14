@@ -22,7 +22,7 @@
     import { cn } from "@/lib";
 
     const button = cva(
-        "cursor-pointer flex justify-center duration-100 font-medium grow-0 shrink-0 items-center",
+        "cursor-pointer flex focus-visible:outline-4 focus-visible:outline-blue-500/75 justify-center transition-colors duration-100 font-medium grow-0 shrink-0 items-center",
         {
             variants: {
                 variant: {

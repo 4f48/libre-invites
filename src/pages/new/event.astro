@@ -19,12 +19,24 @@
 import Layout from "@/layouts/html.astro";
 import { Button, DatePicker, Input, Title } from "@/components";
 import { AllDay } from "@/islands";
+import { actions, isInputError } from "astro:actions";
+
+const result = Astro.getActionResult(actions.createEvent);
+console.debug(result?.error);
 ---
 
 <Layout class="flex items-center justify-center h-screen">
     <main class="w-md grid gap-3">
         <Title>Create event</Title>
-        <form class="grid gap-2" enctype="multipart/form-data">
+        {
+            result?.error && (
+                <div class="flex items-center justify-center gap-2 text-white bg-red-500 border border-red-700 rounded-lg h-9">
+                    <div class="i-ph:warning-fill size-5" />
+                    <p>Failed to create event.</p>
+                </div>
+            )
+        }
+        <form action={actions.createEvent} class="grid gap-2" method="post">
             <Input id="title" value="New Event" name="Title" />
             <Input id="location" name="Location or Video Call" />
             <AllDay client:idle />
