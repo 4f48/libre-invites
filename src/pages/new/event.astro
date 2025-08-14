@@ -18,6 +18,7 @@
 
 import Layout from "@/layouts/html.astro";
 import { Button, DatePicker, Input, Title } from "@/components";
+import { AllDay } from "@/islands";
 ---
 
 <Layout class="flex items-center justify-center h-screen">
@@ -26,6 +27,7 @@ import { Button, DatePicker, Input, Title } from "@/components";
         <form class="grid gap-2" enctype="multipart/form-data">
             <Input id="title" value="New Event" name="Title" />
             <Input id="location" name="Location or Video Call" />
+            <AllDay client:idle />
             <DatePicker client:idle id="start" name="Starts" />
             <DatePicker client:idle id="end" name="Ends" />
             <Input id="url" name="URL" />
