@@ -15,6 +15,7 @@
  * along with Libre Invites. If not, see <https://www.gnu.org/licenses/>.
  */
 
+import { parseDate } from "@internationalized/date";
 import { defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { drizzle } from "drizzle-orm/d1";
@@ -33,9 +34,16 @@ export const server = {
     }),
     handler: async (input, { locals }) => {
       const db = drizzle(locals.runtime.env.DB, { schema });
-      const result = await db.query.event.findMany();
-      console.debug(result);
-      console.debug(JSON.stringify(input));
+      const result = await db.insert(schema.event).values({
+        title: input.title || "New Event",
+        location: input.location,
+        allDay: true,
+        start: parseDate(input.start).toDate("UTC"),
+        end: parseDate(input.end).toDate("UTC"),
+        url: input.url,
+        notes: input.notes,
+      });
+      return { success: result.success };
     },
   }),
 };

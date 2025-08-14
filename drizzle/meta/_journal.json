@@ -8,6 +8,34 @@
       "when": 1755165710640,
       "tag": "0000_parallel_shaman",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1755184142614,
+      "tag": "0001_soft_fabian_cortez",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1755184171800,
+      "tag": "0002_curious_valeria_richards",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1755184216375,
+      "tag": "0003_careful_swordsman",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1755184302342,
+      "tag": "0004_exotic_domino",
+      "breakpoints": true
     }
   ]
 }

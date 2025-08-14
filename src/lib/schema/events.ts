@@ -21,6 +21,7 @@ export const event = sqliteTable("event", {
   id: int("id").primaryKey({ autoIncrement: true }),
   title: text("title").notNull(),
   location: text("location"),
+  allDay: int("allday", { mode: "boolean" }).notNull(),
   start: int("start", { mode: "timestamp" }).notNull(),
   end: int("end", { mode: "timestamp" }).notNull(),
   url: text("url"),

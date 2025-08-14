@@ -1,0 +1,1 @@
+ALTER TABLE `event` ADD `allday` integer NOT NULL;
