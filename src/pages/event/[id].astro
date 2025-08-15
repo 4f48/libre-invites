@@ -1,0 +1,64 @@
+---
+import { drizzle } from "drizzle-orm/d1";
+import { eq } from "drizzle-orm";
+import * as schema from "@/lib/schema";
+import Layout from "@/layouts/html.astro";
+import { Button, Input } from "@/components";
+import { Label } from "bits-ui";
+
+const { id } = Astro.params;
+if (!id) return new Response("no id provided", { status: 400 });
+
+const db = drizzle(Astro.locals.runtime.env.DB, { schema });
+const result = await db.query.event.findFirst({
+    columns: {
+        id: false,
+    },
+    where: eq(schema.event.id, id),
+});
+if (!result) return new Response("event not found", { status: 404 });
+---
+
+<Layout
+    class="[&_span]:flex [&_span]:items-center [&_span]:gap-1 [&_div[class*='i-']]:size-5 space-y-2 w-sm"
+>
+    <h1 class="text-3xl font-bold">{result.title}</h1>
+    {
+        result.location && (
+            <span>
+                <div class="i-ph:map-pin" />
+                <p>{result.location}</p>
+            </span>
+        )
+    }
+    <span>
+        <div class="i-ph:calendar-dots"></div>
+        <p>
+            {
+                result.start.toLocaleDateString() ===
+                result.end.toLocaleDateString()
+                    ? result.start.toLocaleDateString()
+                    : `${result.start.toLocaleDateString()} - ${result.end.toLocaleDateString()}`
+            }
+        </p>
+    </span>
+    {
+        result.url && (
+            <div class="grid gap-1">
+                <Label.Root>URL</Label.Root>
+                <Input disabled value={result.url} />
+            </div>
+        )
+    }
+    {
+        result.notes && (
+            <div class="grid gap-1">
+                <Label.Root>Notes</Label.Root>
+                <Input disabled value={result.notes} />
+            </div>
+        )
+    }
+    <div>
+        <Button>Send invites</Button>
+    </div>
+</Layout>

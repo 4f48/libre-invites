@@ -18,7 +18,7 @@
 import { sqliteTable, text, int } from "drizzle-orm/sqlite-core";
 
 export const event = sqliteTable("event", {
-  id: int("id").primaryKey({ autoIncrement: true }),
+  id: text("id").primaryKey(),
   title: text("title").notNull(),
   location: text("location"),
   allDay: int("allday", { mode: "boolean" }).notNull(),

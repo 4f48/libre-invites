@@ -22,14 +22,18 @@ import { AllDay } from "@/islands";
 import { actions } from "astro:actions";
 
 const result = Astro.getActionResult(actions.createEvent);
-if (result && result.error) console.error(result.error);
+if (result && !result.error) {
+    return Astro.redirect(`/event/${result.data.id}`);
+} else if (result) {
+    console.error(result.error);
+}
 ---
 
 <Layout class="flex items-center justify-center h-screen">
     <main class="w-md grid gap-3">
         <Title>Create event</Title>
         {
-            (result?.error || (result && !result?.data.success)) && (
+            result && result.error && (
                 <div class="flex items-center justify-center gap-2 text-white bg-red-500 border border-red-700 rounded-lg h-9">
                     <div class="i-ph:warning-fill size-5" />
                     <p>Failed to create event.</p>

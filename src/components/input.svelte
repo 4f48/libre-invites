@@ -32,7 +32,7 @@
 <input
     autocomplete="off"
     class={cn(
-        "rounded-lg outline h-9 px-2.5 focus-visible:bg-neutral-800 bg-clip-outline focus-visible:outline-3 w-full focus-visible:outline-blue-500 outline-neutral-600 hover:bg-neutral-800 placeholder:text-neutral-500",
+        "rounded-lg outline h-9 px-2.5 focus-visible:bg-neutral-800 bg-clip-outline focus-visible:outline-3 w-full focus-visible:outline-blue-500 outline-neutral-600 enabled:hover:bg-neutral-800 placeholder:text-neutral-500",
         className,
     )}
     {id}

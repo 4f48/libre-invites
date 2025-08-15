@@ -34,7 +34,9 @@ export const server = {
     }),
     handler: async (input, { locals }) => {
       const db = drizzle(locals.runtime.env.DB, { schema });
+      const id = crypto.randomUUID();
       const result = await db.insert(schema.event).values({
+        id,
         title: input.title || "New Event",
         location: input.location,
         allDay: true,
@@ -43,7 +45,7 @@ export const server = {
         url: input.url,
         notes: input.notes,
       });
-      return { success: result.success };
+      return { success: result.success, ...(result.success && { id }) };
     },
   }),
 };

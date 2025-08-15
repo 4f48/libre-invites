@@ -16,7 +16,7 @@
     "@astrojs/cloudflare": "^12.6.3",
     "@astrojs/svelte": "^7.1.0",
     "@internationalized/date": "^3.8.2",
-    "astro": "^5.13.0",
+    "astro": "^5.13.1",
     "dotenv": "^17.2.1",
     "drizzle-orm": "^0.44.4",
     "svelte": "^5.38.1",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.2.2",
-    "@types/node": "^24.2.1",
+    "@types/node": "^24.3.0",
     "@unocss/reset": "^66.4.2",
     "bits-ui": "^2.9.3",
     "class-variance-authority": "^0.7.1",
@@ -33,7 +33,7 @@
     "tailwind-merge": "^3.3.1",
     "tsx": "^4.20.4",
     "unocss": "^66.4.2",
-    "wrangler": "^4.29.1"
+    "wrangler": "^4.30.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

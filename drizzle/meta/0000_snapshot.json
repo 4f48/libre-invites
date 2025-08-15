@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "abd9af80-e1a7-4f87-ac6b-6e4f10cc2c17",
+  "id": "1c92fd0b-b066-4d3e-9914-050114ad344d",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "event": {
@@ -9,10 +9,10 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "integer",
+          "type": "text",
           "primaryKey": true,
           "notNull": true,
-          "autoincrement": true
+          "autoincrement": false
         },
         "title": {
           "name": "title",
@@ -26,6 +26,13 @@
           "type": "text",
           "primaryKey": false,
           "notNull": false,
+          "autoincrement": false
+        },
+        "allday": {
+          "name": "allday",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
           "autoincrement": false
         },
         "start": {
