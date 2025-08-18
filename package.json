@@ -13,10 +13,10 @@
     "lint": "prettier --check ."
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.3",
+    "@astrojs/cloudflare": "^12.6.4",
     "@astrojs/svelte": "^7.1.0",
     "@internationalized/date": "^3.8.2",
-    "astro": "^5.13.1",
+    "astro": "^5.13.2",
     "dotenv": "^17.2.1",
     "drizzle-orm": "^0.44.4",
     "svelte": "^5.38.1",

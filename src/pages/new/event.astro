@@ -18,7 +18,7 @@
 
 import Layout from "@/layouts/html.astro";
 import { Button, DatePicker, Input, Title } from "@/components";
-import { AllDay } from "@/islands";
+import { DateTime } from "@/islands";
 import { actions } from "astro:actions";
 
 const result = Astro.getActionResult(actions.createEvent);
@@ -43,9 +43,7 @@ if (result && !result.error) {
         <form action={actions.createEvent} class="grid gap-2" method="post">
             <Input id="title" value="New Event" name="Title" />
             <Input id="location" name="Location or Video Call" />
-            <AllDay client:idle />
-            <DatePicker client:idle id="start" name="Starts" />
-            <DatePicker client:idle id="end" name="Ends" />
+            <DateTime client:idle />
             <Input id="url" name="URL" />
             <Input id="notes" name="Notes" />
             <div class="grid gap-1 grid-cols-2">

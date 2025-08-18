@@ -39,8 +39,12 @@
     });
 </script>
 
-<DatePicker.Root bind:open value={today(getLocalTimeZone())}>
-    <div class="flex items-center">
+<DatePicker.Root
+    bind:open
+    locale={navigator.language}
+    value={today(getLocalTimeZone())}
+>
+    <div class="flex flex-1 items-center">
         <DatePicker.Label class="text-neutral-400 flex-1"
             >{name}</DatePicker.Label
         >

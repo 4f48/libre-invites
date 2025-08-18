@@ -1,1 +1,1 @@
-export { default as AllDay } from "./all-day.svelte";
+export { default as DateTime } from "./datetime.svelte";

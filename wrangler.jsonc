@@ -24,6 +24,7 @@
     {
       "binding": "SESSION",
       "id": "137ef7874dc74813ad0aa701e940f9c8",
+      "experimental_remote": true,
     },
   ],
   "observability": {
